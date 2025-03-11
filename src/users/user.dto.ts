@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsString, IsArray } from 'class-validator';
 
 export abstract class UserDto {
   @IsString()
@@ -8,4 +8,9 @@ export abstract class UserDto {
   @IsString()
   @IsNotEmpty()
   password: string;
+}
+
+export abstract class BulkUserDto {
+  @IsArray()
+  users: UserDto[];
 }
